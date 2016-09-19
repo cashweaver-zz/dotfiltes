@@ -1,0 +1,7 @@
+[user]
+	email = cashbweaver@gmail.com
+	name = cashweaver
+[push]
+	default = simple
+[core]
+	editor = vim
