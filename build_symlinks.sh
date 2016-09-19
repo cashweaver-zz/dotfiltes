@@ -13,22 +13,22 @@ mkdir "$BACKUP_DIR"
 
 cd /home/$(whoami)
 
-mv .gitignore .dotfilebak/
+mv .gitignore .dotfilebak/ 2>/dev/null
 ln -s "$DOTFILE_DIR/.gitignore" .gitignore
 
-mv .vimrc.local .dotfilebak/
+mv .vimrc.local .dotfilebak/ 2>/dev/null
 ln -s "$DOTFILE_DIR/.vimrc.local" .vimrc.local
 
-mv .bashrc .dotfilebak/
+mv .bashrc .dotfilebak/ 2>/dev/null
 ln -s "$DOTFILE_DIR/.bashrc" .bashrc
 
-mv .bashrc.local .dotfilebak/
+mv .bashrc.local .dotfilebak/ 2>/dev/null
 touch .bashrc.local
 
-mv .bash_aliases .dotfilebak/
+mv .bash_aliases .dotfilebak/ 2>/dev/null
 ln -s "$DOTFILE_DIR/.bash_aliases" .bash_aliases
 
-mv .bash_aliases.local .dotfilebak/
+mv .bash_aliases.local .dotfilebak/ 2>/dev/null
 touch .bash_aliases.local
 
 source .bashrc
