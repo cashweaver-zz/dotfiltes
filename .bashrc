@@ -122,8 +122,8 @@ fi
 #if [[ $(type xbindkeys >/dev/null 2>&1) ]]; then
 if [[ $(type xbindkeys) ]]; then
   xbindkeys
-else
-  echo "xbindkeys not found. Skipping."
+#else
+  #echo "xbindkeys not found. Skipping."
 fi
 
 # Configure editor

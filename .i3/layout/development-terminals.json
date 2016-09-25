@@ -1,0 +1,105 @@
+// vim:ts=4:sw=4:et
+{
+    //"border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 434,
+       "width": 722,
+       "x": 0,
+       "y": 0
+    },
+    "name": "owner@UbuntuLaptop: ~",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Gnome\\-terminal$",
+        "instance": "^gnome\\-terminal$"
+       // "title": "^owner\\@UbuntuLaptop\\:\\ \\~$",
+       // "transient_for": "^$",
+       // "window_role": "^gnome\\-terminal\\-window\\-21217\\-245890020\\-1474764837$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 3 children
+    //"border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            //"border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 434,
+               "width": 722,
+               "x": 0,
+               "y": 0
+            },
+            "name": "owner@UbuntuLaptop: ~",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^Gnome\\-terminal$",
+                "instance": "^gnome\\-terminal$"
+               // "title": "^owner\\@UbuntuLaptop\\:\\ \\~$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-21217\\-2145880311\\-1474764884$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            //"border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 434,
+               "width": 722,
+               "x": 0,
+               "y": 0
+            },
+            "name": "owner@UbuntuLaptop: ~",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^Gnome\\-terminal$",
+                "instance": "^gnome\\-terminal$"
+               // "title": "^owner\\@UbuntuLaptop\\:\\ \\~$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-21217\\-\\-718565707\\-1474764886$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            //"border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 434,
+               "width": 722,
+               "x": 0,
+               "y": 0
+            },
+            "name": "owner@UbuntuLaptop: ~",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^Gnome\\-terminal$",
+                "instance": "^gnome\\-terminal$"
+               // "title": "^owner\\@UbuntuLaptop\\:\\ \\~$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-21217\\-\\-935946011\\-1474764886$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
