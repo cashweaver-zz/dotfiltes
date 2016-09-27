@@ -25,7 +25,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Return exec /home/owner/.i3/i3_dev_terminals.sh
+bindsym $mod+Shift+Return exec /home/cash/.i3/i3_dev_terminals.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -116,7 +116,46 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+  font pango:Source Code Pro 8
+
+  #status_command i3status
+  status_command i3blocks
+}
+hide_edge_borders both
+
+
+################################################################################
+#                                  Startup                                     #
+################################################################################
+
+# Open development configuration and browser
+exec --no-startup-id i3-msg 'workspace 1; append_layout /home/cash/.i3/layout/development-terminals.json; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; workspace 10; exec chromium-browser'
+
+################################################################################
+#                                   Modes                                      #
+################################################################################
+
+#set $Locker i3lock-wrapper -l && sleep 1
+set $Locker i3lock --color=004e92 --ignore-empty-password && sleep 1
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id  systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Delete mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -141,30 +180,24 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-  status_command i3status
-}
-
-hide_edge_borders both
-
 ################################################################################
-#                                  Startup                                     #
+#                                  Programs                                    #
 ################################################################################
 
-# Open development configuration and browser
-exec --no-startup-id i3-msg 'workspace 1; append_layout /home/owner/.i3/layout/development-terminals.json; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; workspace 10; exec chromium-browser'
+for_window [class="chromium-browser"] border none
 
 ################################################################################
 #                                 Keybindings                                  #
 ################################################################################
 
+# Brightness
+bindcode 232 exec xbacklight -dec 10
+bindcode 233 exec xbacklight -inc 10
+
 # Touchpad
-bindcode 133 exec /home/owner/.scripts/keybindings/touchpad_toggle.sh
+bindcode 133 exec /home/cash/.scripts/keybindings/touchpad_toggle.sh
 
 # Alsamixer
 bindcode 123 exec amixer -q set Master 5%+ unmute

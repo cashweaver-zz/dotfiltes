@@ -16,6 +16,9 @@ cd /home/$(whoami)
 mv .gitignore .dotfilebak/ 2>/dev/null
 ln -s "$DOTFILE_DIR/.gitignore" .gitignore
 
+mv .gitconfig .dotfilebak/ 2>/dev/null
+ln -s "$DOTFILE_DIR/.gitconfig" .gitconfig
+
 mv .vimrc.local .dotfilebak/ 2>/dev/null
 ln -s "$DOTFILE_DIR/.vimrc.local" .vimrc.local
 

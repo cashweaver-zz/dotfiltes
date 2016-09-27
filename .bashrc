@@ -120,11 +120,11 @@ fi
 
 # Enable custom keybindings
 #if [[ $(type xbindkeys >/dev/null 2>&1) ]]; then
-if [[ $(type xbindkeys) ]]; then
-  xbindkeys
+#if [[ $(type xbindkeys) ]]; then
+  #xbindkeys
 #else
   #echo "xbindkeys not found. Skipping."
-fi
+#fi
 
 # Configure editor
 # ref: http://stackoverflow.com/a/2596835
