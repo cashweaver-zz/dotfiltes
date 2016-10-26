@@ -1,0 +1,5 @@
+" Plugins
+" Plugin 'pangloss/vim-javascript' (provided by spf13-vim)
+Plugin 'mxw/vim-jsx'
+Plugin 'moll/vim-node'
+Plugin 'digitaltoad/vim-pug'

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git config -l | grep alias | sed "s/alias.\([a-zA-Z0-9]*\)=\(.*\)/\1 $(tput setaf 4)\2$(tput sgr0)/"
+

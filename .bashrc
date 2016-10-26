@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export TERM=xterm-256color
+
 # If not running interactively, don't do anything
 case $- in
   *i*) ;;
@@ -56,10 +58,18 @@ if [ -n "$force_color_prompt" ]; then
   fi
 fi
 
+# ref: http://superuser.com/a/180267
+short_pwd() {
+  cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
+  echo -n $cwd
+}
+# later in your .bashrc
+#PS1="\u \$(short_pwd) \$ "
+
 if [ "$color_prompt" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n'
+  PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\$(short_pwd)\[\033[00m\]\n"
 else
-  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n'
+  PS1="${debian_chroot:+($debian_chroot)}\u@\h:\$(short_pwd)\n"
 fi
 unset color_prompt force_color_prompt
 
@@ -134,3 +144,6 @@ export EDITOR="$VISUAL"
 if [ -f ~/.bashrc.local ]; then
   . ~/.bashrc.local
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

@@ -134,14 +134,25 @@ hide_edge_borders both
 ################################################################################
 
 # Open development configuration and browser
-exec --no-startup-id i3-msg 'workspace 1; append_layout /home/cash/.i3/layout/development-terminals.json; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; workspace 10; exec chromium-browser'
+#exec --no-startup-id i3-msg 'workspace 1; append_layout /home/cash/.i3/layout/development-terminals.json; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; workspace 10; exec chromium-browser'
+exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal; workspace 10; exec chromium-browser'
+exec --no-startup-id redshift -l 39.72:-121.83
+
+# Touchpad should start `off`
+exec --no-startup-id /home/cash/.scripts/keybindings/touchpad_toggle.sh
+
+# Fix issue with `unity-control-center` within i3
+exec --no-startup-id unset XDG_CURRENT_DESKTOP
+
+# Enable 'Natural Scrolling'
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics Touchpad" "Synaptics Scrolling Distance" -125, -125
 
 ################################################################################
 #                                   Modes                                      #
 ################################################################################
 
 #set $Locker i3lock-wrapper -l && sleep 1
-set $Locker i3lock --color=004e92 --ignore-empty-password && sleep 1
+set $Locker i3lock -u --image=/home/cash/documents/backgrounds/flagrant_system_error.png --ignore-empty-password && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
@@ -187,19 +198,27 @@ bindsym $mod+r mode "resize"
 ################################################################################
 
 for_window [class="chromium-browser"] border none
+for_window [class="Firefox-dev"] border none
+for_window [class="Spotify"] border none
+for_window [class="Gnome-terminal"] border none
 
 ################################################################################
 #                                 Keybindings                                  #
 ################################################################################
 
 # Brightness
-bindcode 232 exec xbacklight -dec 10
-bindcode 233 exec xbacklight -inc 10
+bindcode 232 exec xbacklight -dec 5
+bindcode 233 exec xbacklight -inc 5
 
 # Touchpad
 bindcode 133 exec /home/cash/.scripts/keybindings/touchpad_toggle.sh
 
 # Alsamixer
-bindcode 123 exec amixer -q set Master 5%+ unmute
-bindcode 122 exec amixer -q set Master 5%- unmute
-bindcode 121 exec amixer -q set Master mute
+bindcode 123 exec /home/cash/.scripts/keybindings/volume_up.sh
+bindcode 122 exec /home/cash/.scripts/keybindings/volume_down.sh
+bindcode 121 exec /home/cash/.scripts/keybindings/volume_mute.sh
+
+# Music
+bindcode 173 exec /home/cash/.scripts/keybindings/music-prev.sh
+bindcode 172 exec /home/cash/.scripts/keybindings/music-playpause.sh
+bindcode 171 exec /home/cash/.scripts/keybindings/music-next.sh

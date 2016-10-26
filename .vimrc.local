@@ -1,4 +1,62 @@
+" -----------------------------------------------------------------------------
+" Indenting
 set shiftwidth=2
 set expandtab
 set tabstop=2
 set softtabstop=2
+
+" -----------------------------------------------------------------------------
+" Keybindings
+"let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+
+if !exists('g:spf13_no_easyWindows')
+  map <TAB>j <C-W>j<C-W>_
+  map <TAB>k <C-W>k<C-W>_
+  map <TAB>l <C-W>l<C-W>_
+  map <TAB>h <C-W>h<C-W>_
+endif
+
+nnoremap <Leader><Space> :SyntasticCheck<CR>
+
+" -----------------------------------------------------------------------------
+" Style check
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_error_symbol = ''
+let g:syntastic_style_error_symbol = ''
+let g:syntastic_warning_symbol = ''
+let g:syntastic_style_warning_symbol = ''
+
+" -----------------------------------------------------------------------------
+" Folding
+autocmd FileType javascript setlocal foldmethod=syntax
+autocmd FileType javascript setlocal foldnestmax=2
+
+" Disable rainbow parens as it interferes with vim-javascript syntax
+" highlighting.
+" ref:
+"   https://github.com/pangloss/vim-javascript/issues/185
+"   http://vimdoc.sourceforge.net/htmldoc/eval.html#synstack()
+"   https://github.com/pangloss/vim-javascript/issues/184
+function! SynStack()
+    " https://github.com/tangledhelix/dotfiles/blob/master/vim/plugin/synstack.vim
+    if !exists('*synstack')
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), "synIDattr(v:val, 'name')")
+endfunc
+map <leader>x :call SynStack()<CR>
+
+" -----------------------------------------------------------------------------
+" Syntax Highlighting
+let g:rainbow_active = 0 " toggle with :RainbowToggle
+let g:javascript_plugin_jsdoc = 1
+let g:jsx_ext_required = 0 " Allow JSX highlighting in .js files
+
+"hi def link jsObjectKey Label
