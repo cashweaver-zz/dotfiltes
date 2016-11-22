@@ -4,6 +4,11 @@ set shiftwidth=2
 set expandtab
 set tabstop=2
 set softtabstop=2
+set textwidth=80        " break lines when line length increases
+set autoindent          " copy indent from current line when starting a new line
+
+filetype plugin indent on
+let g:pymode_python = 'python3'
 
 " -----------------------------------------------------------------------------
 " Keybindings

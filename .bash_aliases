@@ -20,6 +20,7 @@ alias ..5="cd ../../../../../"
 # Application/Domain specific
 # vim
 alias v="vim"
+alias vrc="bash ~/.scripts/utility/vim_edit_react_component_and_tests.sh"
 # npm
 alias nis="npm install --save"
 alias nisd="npm install --save-dev"

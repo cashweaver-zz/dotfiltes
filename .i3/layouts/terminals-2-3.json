@@ -1,0 +1,172 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cash@cash-laptop: ~/.i3/layouts",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$",
+               "instance": "^gnome\\-terminal\\-server$"
+               // "title": "^cash\\@cash\\-laptop\\:\\ \\~\\/\\.i3\\/layouts$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-9531b68c\\-846d\\-4977\\-9689\\-9b72e483c0e2$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "none",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cash@cash-laptop: ~/.i3/layouts",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$",
+               "instance": "^gnome\\-terminal\\-server$"
+               // "title": "^cash\\@cash\\-laptop\\:\\ \\~\\/\\.i3\\/layouts$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-1d204e40\\-0391\\-42b2\\-8c9b\\-9561160b8764$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cash@cash-laptop: ~/.i3/layouts",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$",
+               "instance": "^gnome\\-terminal\\-server$"
+               // "title": "^cash\\@cash\\-laptop\\:\\ \\~\\/\\.i3\\/layouts$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-55554f8e\\-defc\\-4c3c\\-9b23\\-92ccaa77559a$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "none",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cash@cash-laptop: ~/.i3/layouts",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$",
+               "instance": "^gnome\\-terminal\\-server$"
+               // "title": "^cash\\@cash\\-laptop\\:\\ \\~\\/\\.i3\\/layouts$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-00991896\\-14f0\\-41b8\\-bd19\\-11d52fafcc59$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cash@cash-laptop: ~/.i3/layouts",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$",
+               "instance": "^gnome\\-terminal\\-server$"
+               // "title": "^cash\\@cash\\-laptop\\:\\ \\~\\/\\.i3\\/layouts$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-97a0bc36\\-e8d3\\-4f22\\-b1bf\\-484ec87414e9$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "none",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cash@cash-laptop: ~/.i3/layouts",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$",
+               "instance": "^gnome\\-terminal\\-server$"
+               // "title": "^cash\\@cash\\-laptop\\:\\ \\~\\/\\.i3\\/layouts$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-68029d8b\\-360f\\-4bdb\\-be83\\-e3312f8cc691$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

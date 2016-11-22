@@ -53,6 +53,7 @@ if [ -n "$force_color_prompt" ]; then
     # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
     # a case would tend to support setf rather than setaf.)
     color_prompt=yes
+
   else
     color_prompt=
   fi
@@ -63,13 +64,21 @@ short_pwd() {
   cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
   echo -n $cwd
 }
-# later in your .bashrc
-#PS1="\u \$(short_pwd) \$ "
+grey=`tput setaf 8`
+reset=`tput sgr0`
+
+# Open new terminals at the most recent cwd
+# ref: https://faq.i3wm.org/question/150/how-to-launch-a-terminal-from-here/
+# Save current working dir
+PROMPT_COMMAND='pwd > "${XDG_RUNTIME_DIR}/.cwd"'
+# Change to saved working dir
+[[ -f "${XDG_RUNTIME_DIR}/.cwd" ]] && cd "$(< ${XDG_RUNTIME_DIR}/.cwd)"
 
 if [ "$color_prompt" = yes ]; then
   PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\$(short_pwd)\[\033[00m\]\n"
 else
-  PS1="${debian_chroot:+($debian_chroot)}\u@\h:\$(short_pwd)\n"
+  DIVIDER="${grey}————————————————————${reset}"
+  PS1="$DIVIDER\n${debian_chroot:+($debian_chroot)}\u@\h:\$(short_pwd)\n"
 fi
 unset color_prompt force_color_prompt
 
@@ -147,3 +156,14 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR="/home/cash/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# added by Miniconda3 4.2.12 installer
+export PATH="/home/cash/.miniconda3/bin:$PATH"
+
+# added by travis gem
+[ -f /home/cash/.travis/travis.sh ] && source /home/cash/.travis/travis.sh
+
+export WINEPREFIX=~/wine-prefixes/halo && export WINEARCH=win32

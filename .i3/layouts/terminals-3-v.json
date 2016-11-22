@@ -1,0 +1,81 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 3 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 722,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cash@cash-laptop: ~",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$",
+               "instance": "^gnome\\-terminal\\-server$"
+               // "title": "^cash\\@cash\\-laptop\\:\\ \\~$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-b681194a\\-832e\\-447d\\-acf6\\-9ec842edce5e$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 722,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cash@cash-laptop: ~",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$",
+               "instance": "^gnome\\-terminal\\-server$"
+               // "title": "^cash\\@cash\\-laptop\\:\\ \\~$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-48652d98\\-66f5\\-4cbf\\-89f3\\-4d5e20a8cabe$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 722,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cash@cash-laptop: ~",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+               "class": "^Gnome\\-terminal$",
+               "instance": "^gnome\\-terminal\\-server$"
+               // "title": "^cash\\@cash\\-laptop\\:\\ \\~$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-e1016155\\-8492\\-4e81\\-ba31\\-3bd19ee5f335$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

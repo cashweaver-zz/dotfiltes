@@ -25,7 +25,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Return exec /home/cash/.i3/i3_dev_terminals.sh
+bindsym $mod+Shift+Return exec /home/cash/.i3/i3_dev_terminals.sh -l terminals-3-v
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -135,8 +135,13 @@ hide_edge_borders both
 
 # Open development configuration and browser
 #exec --no-startup-id i3-msg 'workspace 1; append_layout /home/cash/.i3/layout/development-terminals.json; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; exec gnome-terminal; workspace 10; exec chromium-browser'
-exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal; workspace 10; exec chromium-browser'
-exec --no-startup-id redshift -l 39.72:-121.83
+exec --no-startup-id i3-msg 'workspace 1; exec echo "/home/$(id -un)" > "${XDG_RUNTIME_DIR}/.cwd"; gnome-terminal; workspace 10; exec chromium-browser'
+
+# Locations:
+# City, State, Country: Latitude, Longitude
+# Chico, California, USA: 39.7285° N, 121.8375° W
+# San Francisco, California, USA: 37.7749° N, 122.4194° W
+exec --no-startup-id redshift -l 37.77:-122.41
 
 # Touchpad should start `off`
 exec --no-startup-id /home/cash/.scripts/keybindings/touchpad_toggle.sh
@@ -145,7 +150,7 @@ exec --no-startup-id /home/cash/.scripts/keybindings/touchpad_toggle.sh
 exec --no-startup-id unset XDG_CURRENT_DESKTOP
 
 # Enable 'Natural Scrolling'
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics Touchpad" "Synaptics Scrolling Distance" -125, -125
+exec --no-startup-id TOUCHPAD_XINPUT_ID=$(xinput | grep 'TouchPad' | awk '{print $6}' | sed 's/id=//') xinput set-prop $TOUCHPAD_XINPUT_ID 281 1
 
 ################################################################################
 #                                   Modes                                      #
@@ -201,6 +206,7 @@ for_window [class="chromium-browser"] border none
 for_window [class="Firefox-dev"] border none
 for_window [class="Spotify"] border none
 for_window [class="Gnome-terminal"] border none
+for_window [class="Pencil"] border none
 
 ################################################################################
 #                                 Keybindings                                  #
